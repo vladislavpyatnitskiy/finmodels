@@ -23,8 +23,7 @@ OIBDA <- function(x){ # function to get OIBDA ratios
     
     c <- gsub(",", "", gsub("([a-zA-Z]),", "\\1 ", c)) 
     
-    oibda <- rbind(oibda, as.numeric(c[1]) + as.numeric(c[2]) +
-                     as.numeric(c[3]) + as.numeric(c[4])) } # OIBDA
+    oibda <- rbind(oibda, sum(as.numeric(c[seq(4)]))) } # OIBDA
     
   rownames(oibda) <- x # Ticker names
   colnames(oibda) <- "OIBDA" # Column Name
